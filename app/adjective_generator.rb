@@ -4,8 +4,10 @@ Dir.glob(File.join(File.dirname(__FILE__), 'adjective_generator', '*.rb')).each 
 
 module AdjectiveGenerator
   class App < Sinatra::Base
+    set :root, File.dirname(__FILE__)
     get '/' do
-      AdjectiveGenerator::Adjective.random
+      @word = AdjectiveGenerator::Adjective.random
+      erb :index
     end
   end
 end
