@@ -6,6 +6,7 @@ Dir.glob(File.join(File.expand_path(File.dirname(__FILE__)), 'adjective_generato
 module AdjectiveGenerator
   class App < Sinatra::Base
     set :root, File.dirname(__FILE__)
+    set :port, ENV['PORT'] || 4567
     register Sinatra::AssetPack
 
     assets {
