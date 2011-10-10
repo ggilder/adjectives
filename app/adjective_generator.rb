@@ -1,7 +1,7 @@
 require 'bundler/setup'
 Bundler.require(:default)
 
-Dir.glob(File.join(File.dirname(__FILE__), 'adjective_generator', '*.rb')).each { |f| require f }
+Dir.glob(File.join(File.expand_path(File.dirname(__FILE__)), 'adjective_generator', '*.rb')).each { |f| require f }
 
 module AdjectiveGenerator
   class App < Sinatra::Base
