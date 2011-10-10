@@ -16,6 +16,10 @@ module AdjectiveGenerator
         '/css/styles.css'
       ]
     }
+    
+    before :host_name => /^www\./ do
+      redirect request.url.sub(/www\./, ''), 301
+    end
 
     get '/' do
       @word = AdjectiveGenerator::Adjective.random
